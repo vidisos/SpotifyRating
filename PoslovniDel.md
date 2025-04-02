@@ -8,6 +8,6 @@
 
 ## Velikost trga:
 - V evropi je več kot 700 milijonov uporabnikov (okoli 200 milijonov, če omejimo na Evropo)
-- Podcenjeno ugibanje bi bilo, da okoli 1% uporabnikov Spotify želi uporabljati našo aplikacijo (7 milijonov)
+- Ugibanje bi bilo, da okoli 0.5% uporabnikov Spotify želi uporabljati našo aplikacijo (3.5 milijonov)
 
 ## SWOT analiza 
