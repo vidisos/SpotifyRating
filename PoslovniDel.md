@@ -9,7 +9,10 @@
 - Ugibanje bi bilo, da okoli 0.5% uporabnikov Spotify želi uporabljati našo aplikacijo (3.5 milijonov)
 
 # TODO Konkurenčna analiza
-
+| Ime Konkurence | Prednosti | Slabosti | Naša razlika |
+|---------|---------|---------|---------|
+| Musicboard |  |  |  |
+| Metacritic |  |  |  |
 
 # SWOT analiza
 | Prednosti (S) |
