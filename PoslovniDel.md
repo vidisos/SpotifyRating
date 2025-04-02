@@ -29,7 +29,7 @@
 
 | Priložnosti (O) |
 |----------|
-| Če se razširi je mogoče še možna podpora od Spotify |
+| Podpora od Spotify |
 | Če začnemo v Evropi se lahko z primernimi financami razširi čez cel svet |
 | Še naraščujoče število uporabnikov Spotify, kar pomeni tudi več uporabnikov za nas |
 
@@ -39,15 +39,11 @@
 | Ni izkušenj v podjetnjištvu ali legalnemu sistemu, kar lahko povzroči probleme kasneje,<br> če nas druga podjetja kopirajo ali tožijo |
 | Kratki čas uporabe |
 
-### TODO Strategije na podlagi SWOT:
-
-S-O strategija: Izkoristiti poznavanje ciljne skupine za hitre prilagoditve novim trendom
-
-W-O strategija: Partnerstvi s šolami za hitrejše pridobivanje kritične mase uporabnikov
-
-S-T strategija: Poudarjanje varnostnih funkcij za pomiritev staršev
-
-W-T strategija: Ustvarjanje močne skupnosti, ki bo lojalna tudi ob vstopu večjih konkurentov
+### Strategije na podlagi SWOT:
+- S-O strategija: Uporabimo število uporabnikov za povečanje našega posega, s katerim lažje sodelujemo z Spotify
+- W-O strategija: Uporabimo naraščajoče število uporabnikov za financiranje vzdrževanja
+- S-T strategija: Ker bo veliko uporabnikov stran obiskalo, je čas uporabe manj pomemben
+- W-T strategija: Čim bolje narediti našo spletno stran, da so konkurenti manj privlačni
 
 
 # TODO Viri prihodkov:
