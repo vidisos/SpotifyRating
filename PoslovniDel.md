@@ -8,11 +8,12 @@
 - V evropi je več kot 700 milijonov uporabnikov (okoli 200 milijonov, če omejimo na Evropo)
 - Ugibanje bi bilo, da okoli 0.5% uporabnikov Spotify želi uporabljati našo aplikacijo (3.5 milijonov)
 
-# TODO Konkurenčna analiza
+# Konkurenčna analiza
 | Ime Konkurence | Prednosti | Slabosti | Naša razlika |
 |---------|---------|---------|---------|
-| Musicboard |  |  |  |
-| Metacritic |  |  |  |
+| Musicboard | Velikost, profesionalen izgled | Zelo splošno | Specializirani za Spotify |
+| Metacritic | Velikost | Ni specializirano za pesmi in je zato slabši | Boljši z pesmi |
+| Rate Your music | Veliko uporabnikov in glasb | Splošno | Specializirani za Spotify |
 
 # SWOT analiza
 | Prednosti (S) |
@@ -46,30 +47,18 @@
 - W-T strategija: Čim bolje narediti našo spletno stran, da so konkurenti manj privlačni
 
 
-# TODO Viri prihodkov:
+# Viri prihodkov:
+- Osnovna aplikacija je brezplačna
+- Reklame na naši spletni strani
+- Premium/Supporter članstvo (3€/mesec): Ni reklam, značka na komentarjih
 
-Osnovna aplikacija je brezplačna
+# Struktura stroškov:
+- Začetni razvoj: 1000€
+- Mesečno vzdrževanje: 200€ (strežniki, redke posodobitve)
+- Marketing: 100€ mesečno (predvsem spletno oglaševanje in vplivneži)
 
-Premium članstvo (3€/mesec): prednostno ujemanje, posebna označba na profilu, dostop do ekskluzivnih turnirjev
-
-Provizija od organiziranih turnirjev (10% prijavnin)
-
-Partnerstva z lokalnimi trgovinami z igrami in gaming kavarnami (promocijske ponudbe)
-
-# TODO Struktura stroškov:
-
-Začetni razvoj: 1.000€ (večinoma delo ustanoviteljev)
-
-Mesečno vzdrževanje: 250€ (strežniki, podpora, posodobitve)
-
-Marketing: 300€ mesečno (predvsem spletno oglaševanje in promocijski dogodki)
-
-# TODO Strategija pridobivanja uporabnikov:
-
-Organizacija turnirjev na 5 lokalnih srednjih šolah
-
-Sodelovanje z influencerji na področju iger v Sloveniji
-
-Akcija “povabi prijatelja” (oba dobita 1 mesec premium članstva)
+# Strategija pridobivanja uporabnikov:
+- Zastonj premium če uporabnik povabi prijatelj
+- Oglašanje v glasbenih okoljih
 
 
