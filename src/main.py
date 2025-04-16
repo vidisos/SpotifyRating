@@ -10,7 +10,9 @@ def hello_world():
 @app.route("/login")
 def login():
     return render_template("login.html")
-
+@app.route("/loginData")
+def loginData():
+    return
 
 @app.route("/signup")
 def signup():
