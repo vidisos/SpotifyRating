@@ -6,17 +6,39 @@
     <title>Login Page</title>
     <link rel="stylesheet" href="./static/login.css">
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <body>
     <div class="login-container">
         <h2>Login</h2>
         <form action="loginData" method="POST">
             <input type="text" id="username" name="username" placeholder="Username" required>
             <input type="password" id="password" name="password" placeholder="Password" required>
-            <input type="submit" value="Login">
+            <div id="errorBox"></div>
+            <input type="submit" value="Log in" onclick="loginData()">
         </form>
         <div class="switch-link">
-            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+            <p>Don't have an account? <a href="signup">Sign Up</a></p>
         </div>
     </div>
 </body>
+<script>
+    function loginData(){
+        var username = document.getElementById("username").value
+        var password = document.getElementById("password").value
+        var errorBox = document.getElementById("errorBox")
+        console.log(username, password, errorBox)
+
+        $.ajax({
+            url: "/loginData",         
+            data: { 
+                username: username,
+                password: password 
+            },  
+            success: function( response ) {
+                errorBox.innerHTML = response.error;
+                console.log(response)
+            }
+        });
+    }
+</Script>
 </html>
