@@ -1,18 +1,18 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, redirect
 
 app = Flask(__name__)
 
-@app.route("/")
-def hello_world():
+@app.route("/index")
+def index():
     return render_template("index.html")
 
 
 @app.route("/login")
 def login():
     return render_template("login.html")
-@app.route("/loginData", methods=["GET", "POST"])
+@app.route("/loginData")
 def loginData():
-    """
+    """ zancmok magic
     if request.method == "GET":
         return render_template("signup.html")
     """
@@ -20,16 +20,21 @@ def loginData():
     username = request.args.get("username")
     password = request.args.get("password")
 
-    print(username)
-    print(password)
+    print(username, type(username), bool(username))
+    print(password, type(password), bool(password))
 
-    if username is True and password is True:
-        return render_template("index.html")
+    # TODO replace "is True" and "is not True" with actual conditions(database needed)
+    if username == True and password == True:
+        print("e")
+
+    if username == True and password == True:
+        print("e")
+        redirect("/index", code=302) #code 302 means permanent move
     
-    if username is True and password is not True:
+    if username == True and password != True:
         error = "Incorrect password"
 
-    if username is not True:
+    if username != True:
         error = "Incorrect username"
 
     return jsonify({"error": error})
@@ -39,5 +44,5 @@ def loginData():
 def signup():
     return render_template("signup.html")
 
-
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
