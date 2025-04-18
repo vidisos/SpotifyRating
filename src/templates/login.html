@@ -29,10 +29,12 @@
         console.log(username, password, errorBox)
 
         $.ajax({
-            url: "/loginData",         
+            url: "/loginData",
+            type: "GET",         
             data: { 
                 username: username,
-                password: password 
+                password: password,
+                test: "test"
             },  
             success: function( response ) {
                 errorBox.innerHTML = response.error;

@@ -1,40 +1,33 @@
-from flask import Flask, request, render_template, jsonify, redirect
+from flask import Flask, request, render_template, jsonify, redirect, session
 
 app = Flask(__name__)
 
-@app.route("/index")
+@app.route("/")
 def index():
     return render_template("index.html")
 
 
 @app.route("/login")
 def login():
-    return render_template("login.html")
-@app.route("/loginData")
-def loginData():
-    """ zancmok magic
-    if request.method == "GET":
-        return render_template("signup.html")
-    """
+    if session.get("user_logged_in"):
+        return redirect("/")
 
+    return render_template("login.html")
+
+@app.route("/loginData", methods=["GET"])
+def loginData():
     username = request.args.get("username")
     password = request.args.get("password")
 
-    print(username, type(username), bool(username))
-    print(password, type(password), bool(password))
-
-    # TODO replace "is True" and "is not True" with actual conditions(database needed)
-    if username == True and password == True:
-        print("e")
-
-    if username == True and password == True:
-        print("e")
-        redirect("/index", code=302) #code 302 means permanent move
+    # TODO put actual conditions in (database needed)
+    if username and password:
+        session["user_logged_in"] = True
+        error = ""
     
-    if username == True and password != True:
+    if username and not password:
         error = "Incorrect password"
 
-    if username != True:
+    if username:
         error = "Incorrect username"
 
     return jsonify({"error": error})
@@ -45,4 +38,6 @@ def signup():
     return render_template("signup.html")
 
 if __name__ == "__main__":
+    app.config["SECRET_KEY"] = "sigma"
+
     app.run(debug=True)
