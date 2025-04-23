@@ -21,26 +21,7 @@
         </div>
     </div>
 </body>
-<script>
-    function loginData(){
-        var username = document.getElementById("username").value
-        var password = document.getElementById("password").value
-        var errorBox = document.getElementById("errorBox")
-        console.log(username, password, errorBox)
-
-        $.ajax({
-            url: "/loginData",
-            type: "GET",         
-            data: { 
-                username: username,
-                password: password,
-                test: "test"
-            },  
-            success: function( response ) {
-                errorBox.innerHTML = response.error;
-                console.log(response)
-            }
-        });
-    }
-</Script>
+<script src="{{ url_for('static', filename='js/login.js') }}">
+    //chatGPT used for this (just links the javascript)
+</script> 
 </html>
