@@ -5,7 +5,7 @@ function loginData(){
 
     $.ajax({
         url: "/loginData",
-        type: "GET",         
+        type: "POST",         
         data: { 
             username: username,
             password: password,

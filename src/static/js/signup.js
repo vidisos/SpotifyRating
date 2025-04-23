@@ -1,8 +1,4 @@
-function signupData(event){
-    //this might prevent automatic refreshing
-    //function signupData(event)
-    event.preventDefault()
-    
+function signupData(){
     var username = document.getElementById("username").value
     var password = document.getElementById("password").value
     var confirmPassword = document.getElementById("confirmPassword").value
@@ -11,7 +7,7 @@ function signupData(event){
 
     if (password != confirmPassword){
         errorBox.innerHTML = "Passwords don't match"
-        return //if the passwords dont match then it doesnt do anything with the server and sends an error
+        return //if the passwords dont match then it doesnt send anything to the server and sends an error
     }
 
     $.ajax({

@@ -13,19 +13,15 @@ def index():
 
 @app.route("/login")
 def login():
-    """not needed for now or ever
-    if session.get("user_logged_in"):
-        return redirect("/")"""
-
     return render_template("login.html")
 
-@app.route("/loginData", methods=["GET"])
+@app.route("/loginData", methods=["POST"])
 def loginData():
-    username = request.args.get("username")
-    password = request.args.get("password")
+    username = request.form.get("username")
+    password = request.form.get("password")
 
     error = ""
-    session["user_logged_in"] = False #doesnt matter if its false everytime since if someone wanna login then theyre logged out
+    session["user_logged_in"] = False #doesnt matter if its false everytime since if someone wanna login then theyre probs logged out
 
     # TODO put actual conditions in (database needed)
     if username and password:
@@ -43,14 +39,13 @@ def loginData():
 
 @app.route("/signup")
 def signup():
-    print("2")
     return render_template("signup.html")
 
 @app.route("/signupData", methods=["POST"])
 def signupData():
-    print("1")
-    username = request.args.get("username")
-    password = request.args.get("password")
+    #has to be request.form cuz post sends data in the body, not url
+    username = request.form.get("username")
+    password = request.form.get("password")
 
     error = ""
     session["user_logged_in"] = False
@@ -59,8 +54,10 @@ def signupData():
     if not username:
         error = "Username already exists"
 
+    
+    # TODO put user into database or smth
 
-    #put user into database or smth
+
     user_signed_up = True
     print({"error": error, "user_signed_up": user_signed_up})
 
