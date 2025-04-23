@@ -1,7 +1,7 @@
-function signupData(){
+function signupData(event){
     //this might prevent automatic refreshing
     //function signupData(event)
-    //event.preventDefault()
+    event.preventDefault()
     
     var username = document.getElementById("username").value
     var password = document.getElementById("password").value
@@ -16,7 +16,7 @@ function signupData(){
 
     $.ajax({
         url: "/signupData",
-        type: "GET",         
+        type: "POST",         
         data: { 
             username: username,
             password: password,

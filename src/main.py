@@ -43,10 +43,12 @@ def loginData():
 
 @app.route("/signup")
 def signup():
+    print("2")
     return render_template("signup.html")
 
-@app.route("/signupData", methods=["GET"])
+@app.route("/signupData", methods=["POST"])
 def signupData():
+    print("1")
     username = request.args.get("username")
     password = request.args.get("password")
 
@@ -60,6 +62,7 @@ def signupData():
 
     #put user into database or smth
     user_signed_up = True
+    print({"error": error, "user_signed_up": user_signed_up})
 
     return jsonify({"error": error, "user_signed_up": user_signed_up})
 
