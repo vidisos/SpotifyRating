@@ -1,4 +1,5 @@
-from flask import Flask, request, render_template, jsonify, redirect, session
+from flask import Flask, request, render_template, jsonify, session
+from database_manager import func1
 
 app = Flask(__name__,)
 app.config["SECRET_KEY"] = "Acrid" #afaik it just needs to be defined and youre done with it
@@ -6,7 +7,7 @@ app.config["SECRET_KEY"] = "Acrid" #afaik it just needs to be defined and youre 
 
 @app.route("/")
 def index():
-    #TODO get rid of this session false later
+    #TODO get rid of this session false later when you get a log out button
     session["user_logged_in"] = False
     return render_template("index.html")
 
@@ -21,7 +22,8 @@ def loginData():
     password = request.form.get("password")
 
     error = ""
-    session["user_logged_in"] = False #doesnt matter if its false everytime since if someone wanna login then theyre probs logged out
+    #doesnt matter if its false everytime since if someone wanna login then theyre probs logged out
+    session["user_logged_in"] = False 
 
     # TODO put actual conditions in (database needed)
     if username and password:
