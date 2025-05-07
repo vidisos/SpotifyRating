@@ -1,6 +1,5 @@
-create table user(
-    ID int autoincrement,
-    username text,
-    password text, 
-    primary key(ID)
+create table if not exists users(
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT,
+    `password` TEXT
 )

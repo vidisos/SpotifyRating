@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, jsonify, session
-from database_manager import func1
+import bcrypt
+import database_manager
 
 app = Flask(__name__,)
 app.config["SECRET_KEY"] = "Acrid" #afaik it just needs to be defined and youre done with it
@@ -49,6 +50,8 @@ def signupData():
     username = request.form.get("username")
     password = request.form.get("password")
 
+    print(username, password)
+
     error = ""
     session["user_logged_in"] = False
 
@@ -56,11 +59,20 @@ def signupData():
     if not username:
         error = "Username already exists"
 
+    #inserts the user into the database
+    if error == "":
+        #converts password into bytes, generates salt and then hashes the password with the salt, converts hashed password back to string(for db)
+        password_bytes: bytes = password.encode('utf-8') 
+        salt: bytes = bcrypt.gensalt()
+        password_hash: bytes = bcrypt.hashpw(password_bytes, salt)
+        decoded_hash: str = password_hash.decode('utf-8')
+
+        #insert
+        database_manager.run_query("src/sql/insert_users.sql", {"username": username,"password": decoded_hash})
+
+        user_signed_up = True
+
     
-    # TODO put user into database or smth
-
-
-    user_signed_up = True
     print({"error": error, "user_signed_up": user_signed_up})
 
     return jsonify({"error": error, "user_signed_up": user_signed_up})
