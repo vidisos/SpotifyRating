@@ -68,7 +68,7 @@ def signupData():
         decoded_hash: str = password_hash.decode('utf-8')
 
         #insert
-        database_manager.run_query("src/sql/insert_users.sql", {"username": username,"password": decoded_hash})
+        database_manager.run_query("src/sql/insert_users.sql", {"username": username, "password": decoded_hash})
 
         user_signed_up = True
 
