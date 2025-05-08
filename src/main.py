@@ -21,26 +21,26 @@ def login():
 def loginData():
     username = request.form.get("username")
     password = request.form.get("password")
-
     error = ""
+    
     # Doesnt matter if its false everytime since if someone wanna login then theyre probs logged out
     session["user_logged_in"] = False 
 
     # Checks if username is in db
     user_data: list[tuple | None] = database_manager.run_query("src/sql/search_user.sql", {"username": username})
-
-    if not user_data:
-        error = "Username doesn't exist"
-
-    db_username = user_data[0][1]
-    db_password = user_data[0][2]
-    #idfk make password checking work
-    if db_username == username and bcrypt.checkpw(password.encode("utf-8"), db_password.encode("utf-8")):
-        error = "Incorrect password"
     
-    if db_username == username and db_password == password:
-        session["user_logged_in"] = True
-        # TODO login works ish but sometime il have to send the info of the user to the main page or smth 
+    # Login check
+    # TODO login works ish but sometime il have to send the info of the user to the main page or smth 
+    if user_data:
+        db_password = user_data[0][2]
+
+        #encodes both strings to bytes and lets the hashing library do the hard work
+        if bcrypt.checkpw(password.encode(), db_password.encode()):
+            session["user_logged_in"] = True
+        else: 
+            error = "Incorrect password"
+    else:
+        error = "Username doesn't exist"
 
     return jsonify({"error": error,
                     "user_logged_in": session["user_logged_in"]})
